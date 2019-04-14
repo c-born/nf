@@ -55,7 +55,8 @@ export function activate(context: vscode.ExtensionContext) {
 */
 		return getNFRoot();
 
-		var res = await proc.execute("C:\\Windows\\System32\\cmd.exe", ["/C","SetNFRoot.bat"]).result;
+		//var res = await proc.execute("C:\\Windows\\System32\\cmd.exe", ["/C","SetNFRoot.bat"]).result;
+		var res = await proc.executeCMD(["SetNFRoot.bat"]).result;
 		if(res.retc === 0 && res.stdout) {
 			return(path.dirname(res.stdout));
 		}
@@ -101,7 +102,8 @@ async function getNFRoot() : Promise<string>
 	});
 //	var fpath = workspaceRoot() + "\\" + "SetNFRoot.bat";
 	if(fileExists(fpath)) {
-		var res = await proc.execute("C:\\Windows\\System32\\cmd.exe", ["/C","SetNFRoot.bat"]).result;
+		//var res = await proc.execute("C:\\Windows\\System32\\cmd.exe", ["/C","SetNFRoot.bat"]).result;
+		var res = await proc.executeCMD(["SetNFRoot.bat"]).result;
 		if(res.retc === 0 && res.stdout) {
 			return(path.dirname(res.stdout));
 		}

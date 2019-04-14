@@ -106,3 +106,15 @@ export function execute(command: string,
 	}
 	return { child, result };
 }
+
+/**
+ * Execute a command using CMD.exe and return the result
+ * @param args The arguments to pass to CMD (batch file and any parameters)
+ */
+export function executeCMD(args: string[]) : Subprocess
+{
+	let argarr = ["/C"];
+	argarr = argarr.concat(args);
+
+	return execute("C:\\Windows\\System32\\cmd.exe",  argarr);
+}
