@@ -3,6 +3,7 @@
 	"displayName": "nf",
 	"description": "",
 	"version": "0.0.1",
+	"publisher": "cborn",
 	"engines": {
 		"vscode": "^1.33.0"
 	},
@@ -10,14 +11,29 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:extension.helloWorld"
+		"onCommand:nf.helloWorld",
+		"onCommand:nf.workspaceFolderFS",
+		"onCommand:nf.buildDirectory",
+		"onCommand:nf.nfRoot"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.helloWorld",
+				"command": "nf.helloWorld",
 				"title": "Hello World"
+			},
+			{
+				"command": "nf.workspaceFolderFS",
+				"title": "workspaceFolderFS"
+			},
+			{
+				"command": "nf.binaryDir",
+				"title": "binaryDir"
+			},
+			{
+				"command": "nf.nfRoot",
+				"title": "nfRoot"
 			}
 		]
 	},
