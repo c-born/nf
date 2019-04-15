@@ -1,8 +1,8 @@
 {
 	"name": "nf",
 	"displayName": "nf",
-	"description": "",
-	"version": "0.0.1",
+	"description": "Support for nanoFramework development in Visual Studio Code",
+	"version": "1.0.1",
 	"publisher": "cborn",
 	"engines": {
 		"vscode": "^1.33.0"
@@ -10,6 +10,16 @@
 	"categories": [
 		"Other"
 	],
+	"repository": {
+		"type": "git",
+		"url": "[https://github.com/c-born/nf.git]"
+	},
+	"keywords": [
+		"nanoFramework",
+		"cmake",
+		"tools",
+		"build"
+	  ],
 	"activationEvents": [
 		"onCommand:nf.workspaceFolder/",
 		"onCommand:nf.buildDirectory",
@@ -61,5 +71,8 @@
 		"tslint": "^5.12.1",
 		"@types/node": "^10.12.21",
 		"@types/mocha": "^2.2.42"
-	}
+	},
+	"extensionDependencies": [
+		"vector-of-bool.cmake-tools"
+	  ]
 }

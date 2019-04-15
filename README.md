@@ -88,7 +88,7 @@ Please give it a run and let me know what other variable substitutions wuld be o
 ## Release Notes
 
 
-### 1.0.0 (alpha)
+### 1.0.1 (alpha)
 
 Initial release of `nf` extension
 
