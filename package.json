@@ -11,29 +11,40 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:nf.helloWorld",
-		"onCommand:nf.workspaceFolderFS",
+		"onCommand:nf.workspaceFolder/",
 		"onCommand:nf.buildDirectory",
-		"onCommand:nf.nfRoot"
+		"onCommand:nf.buildDirectory/",
+		"onCommand:nf.nfRoot",
+		"onCommand:nf.nfRoot/",
+		"onCommand:nf.AutoRun",
+		"workspaceContains:**/AutoRun.bat"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "nf.helloWorld",
-				"title": "Hello World"
-			},
-			{
-				"command": "nf.workspaceFolderFS",
-				"title": "workspaceFolderFS"
+				"command": "nf.workspaceFolder/",
+				"title": "workspaceFolder/"
 			},
 			{
 				"command": "nf.binaryDir",
 				"title": "binaryDir"
 			},
 			{
+				"command": "nf.binaryDir/",
+				"title": "binaryDir/"
+			},
+			{
 				"command": "nf.nfRoot",
 				"title": "nfRoot"
+			},
+			{
+				"command": "nf.nfRoot/",
+				"title": "nfRoot/"
+			},
+			{
+				"command": "nf.AutoRun",
+				"title": "AutoRun"
 			}
 		]
 	},
