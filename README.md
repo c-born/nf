@@ -60,6 +60,10 @@ Note `buildDirectory` is obtained from CMake-Tools, which has to have run a `Con
 "cmake.buildDirectory" : "${workspaceRoot}/build/${variant:target}"
 ```
 
+## Examples
+
+The `examples` subdirectory contains some reference examples files for usingthe extension, take a look at the [examples documenation](examples/README.md)
+
 ## References
 
 There have been several requests to the VS Code developers to add a method to work around the lack of `/` separator problem over the years, so far none have been adopted:
