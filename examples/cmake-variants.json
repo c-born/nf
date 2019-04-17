@@ -1,0 +1,104 @@
+{
+    "buildType": {
+      "default": "debug",
+        "choices": { 
+          "debug": {
+            "short": "Debug",
+            "long": "Emit debug information without performing optimizations",
+            "buildType": "Debug"
+          },
+          "release": {
+            "short": "Release",
+            "long": "Enable optimizations, omit debug info",
+            "buildType": "Release"
+          },
+          "minsize": {
+            "short": "MinSizeRel",
+            "long": "Optimize for smallest binary size",
+            "buildType": "MinSizeRel"
+          },
+          "reldeb": {
+            "short": "RelWithDebInfo",
+            "long": "Perform optimizations AND include debugging information",
+            "buildType": "RelWithDebInfo"
+          }    
+        }
+    },
+  
+    "target": {
+      "default": "Esp32_nanoCLR",
+      "choices": {
+  
+        "Esp32_nanoCLR": { 
+        "short": "Esp32",
+          "settings": {
+            "BUILD_VERSION" : "0.9.99.999",
+            "TOOLCHAIN_PREFIX" : "C:/ESP32_TOOLS", 
+            "ESP32_IDF_PATH" : "C:/ESP32_TOOLS/esp-idf-v3.1", 
+            "ESP32_LIBS_PATH" : "C:/ESP32_TOOLS/libs-v3.1",
+            "EXECUTABLE_OUTPUT_PATH" : "${workspaceRoot}/build/${variant:target}",
+            "TARGET_SERIES" : "ESP32", 
+            "ESP32_BOARD" : "ESP32_WROOM_32",
+            "USE_FPU" : "TRUE",
+            "RTOS" : "FREERTOS_ESP32",
+            "SWO_OUTPUT" : "OFF",
+            "NF_BUILD_RTM" : "OFF",
+            "NF_WP_TRACE_ERRORS" : "OFF",
+            "NF_WP_TRACE_HEADERS" : "OFF",
+            "NF_WP_TRACE_STATE" : "OFF",
+            "NF_WP_TRACE_NODATA" : "OFF",
+            "NF_WP_TRACE_ALL" : "OFF",
+            "NF_WP_IMPLEMENTS_CRC32" : "OFF",
+            "NF_FEATURE_DEBUGGER" : "ON",
+            "NF_FEATURE_RTC" : "ON",
+            "NF_FEATURE_USE_APPDOMAINS" : "OFF",
+            "NF_FEATURE_USE_FILESYSTEM" : "OFF",
+            "NF_FEATURE_HAS_CONFIG_BLOCK" : "ON",
+            "API_System.Net" : "ON",
+            "NF_SECURITY_OPENSSL" : "ON",
+            "API_Windows.Devices.Wifi": "ON",
+            "API_Windows.Devices.Adc" : "ON",
+            "API_Windows.Devices.Gpio" : "ON",
+            "API_Windows.Devices.I2c" : "ON",
+            "API_Windows.Devices.Pwm" : "ON",
+            "API_Windows.Devices.SerialCommunication" : "ON",
+            "API_Windows.Devices.Spi" : "ON",
+            "API_Windows.Networking.Sockets" : "OFF",
+            "API_Hardware.Esp32" : "ON"
+        }
+      }
+    
+   ,
+        "ST_STM32F769I_DISCOVERY": {
+          "short": "ST_STM32F769I_DISCOVERY",
+          "settings": {
+            "BUILD_VERSION" : "0.9.99.999",
+            "TOOLCHAIN_PREFIX" : "C:/GNU_Tools_ARM_Embedded/7-2018-q2-update",
+            "EXECUTABLE_OUTPUT_PATH" : "${workspaceRoot}/build/${variant:target}",
+            "CMAKE_INSTALL_PREFIX" : "${workspaceRoot}/build/${variant:target}",
+            "TARGET_SERIES" : "STM32F7xx",
+            "SUPPORT_ANY_BASE_CONVERSION" : "ON",
+            "RTOS" : "CHIBIOS",
+            "CHIBIOS_SOURCE" : "C:/usr/src/NanoFramework/ChibiOS",
+            "CHIBIOS_BOARD" : "ST_STM32F769I_DISCOVERY",
+            "SWO_OUTPUT" : "ON",
+            "USE_RNG" : "ON",
+            "NF_BUILD_RTM" : "OFF",
+            "NF_FEATURE_DEBUGGER" : "ON",
+            "NF_FEATURE_RTC" : "ON",
+            "NF_SECURITY_OPENSSL" : "OFF",
+            "NF_SECURITY_MBEDTLS" : "OFF",
+            "NF_FEATURE_HAS_CONFIG_BLOCK" : "ON",
+            "API_System.Net" : "ON",
+            "API_Windows.Devices.Adc" : "ON",
+            "API_Windows.Devices.Gpio" : "ON",
+            "API_Windows.Devices.Spi" : "ON",
+            "API_Windows.Devices.I2c" : "ON",
+            "API_Windows.Devices.Pwm" : "ON",
+            "API_Windows.Devices.SerialCommunication" : "ON",
+            "API_Windows.Networking.Sockets" : "OFF"
+          }
+        }
+      }
+    }
+  }

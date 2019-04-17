@@ -83,12 +83,12 @@ Much would be better handled in `CMake-Tools` and VS Code itself.
 
 Only designed for Windows, and probably a subset of configurations, until I hear back from other testers.
 
-Please give it a run and let me know what other variable substitutions wuld be of use!
+Please give it a run and let me know what other variable substitutions would be of use!
 
 ## Release Notes
 
 
 ### 1.0.1 (alpha)
 
-Initial release of `nf` extension
-
+Initial release of `nf` extension  
+Inviting comments on implementation and documentation, please give it a try and get back with what works, what doesn't, what needs explanation and what could be improved.

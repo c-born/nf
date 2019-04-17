@@ -1,0 +1,170 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "ESP32 nanoCLR - Segger JLink",
+            "type": "cppdbg",
+            "request": "launch",
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/Esp32_Tools/xtensa-esp32-elf/bin/xtensa-esp32-elf-gdb.exe",
+            "stopAtEntry":true,
+            "program": "${command:nf.binaryDir/}/nanoCLR.elf",
+            "setupCommands": [
+                {"text": "set logging on"},
+                {"text": "target extended-remote localhost:3333"},
+                {"text": "file ${command:nf.binaryDir/}/nanoCLR.elf"},
+                {"text": "set remote hardware-watchpoint-limit 2"},
+                {"text": "monitor reset halt"},
+                {"text": "flushregs"},
+                {"text": "thb app_main"},
+//                {"text": "continue"}
+                {"text": "x $a1=0"}
+            ],
+
+            "launchCompleteCommand": "exec-run",
+            "debugServerPath": "C:/Esp32_Tools/openocd-esp32/bin/openocd.exe",
+            "debugServerArgs": "-s \"C:/Esp32_Tools/openocd-esp32/share/openocd/scripts/\" -f interface/jlink.cfg -f target/esp32.cfg -c \"adapter_khz 3000\" " ,
+            "serverStarted": "Info : .*Tensilica.*0x1.",
+            "filterStderr": true,
+            "externalConsole": true,
+            "cwd": "${cwd}",
+
+            "logging": {
+                "trace": true,
+                "traceResponse": true,
+                "engineLogging": true,
+                "programOutput": true,
+                "exceptions": true,
+                "moduleLoad": true
+            }
+        },
+        {
+            "name": "ESP32 nanoCLR - OLimex OCD-H",
+            "type": "cppdbg",
+            "request": "launch",
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/ESP32_TOOLS/bin/xtensa-esp32-elf-gdb.exe",
+            "stopAtEntry":true,
+            "program": "${command:nf.binaryDir/}/nanoCLR.elf",
+
+            "setupCommands": [
+                {"text": "set logging on"},
+                {"text": "target extended-remote localhost:3333"},
+                {"text": "file ${command:nf.binaryDir/}/nanoCLR.elf"},
+                {"text": "monitor reset halt"},
+                {"text": "thb app_main"},
+                {"text": "x $a1=0"}
+            ],
+
+            "launchCompleteCommand": "exec-run",
+            "debugServerPath": "C:/ESP32_TOOLS/openocd-esp32/bin/openocd.exe",
+            "debugServerArgs": "-s \"C:/ESP32_TOOLS/openocd-esp32/share/openocd/scripts/\" -f interface/ftdi/olimex-arm-usb-ocd-h.cfg -f target/esp32.cfg -c \"adapter_khz 3000\" " ,
+            "serverStarted": "Info : .*Tensilica.*0x1.",
+            "filterStderr": true,
+            "externalConsole": true,
+            "cwd": "${cwd}",
+
+            "logging": {
+                "trace": true,
+                "traceResponse": true,
+                "engineLogging": true,
+                "programOutput": true,
+                "exceptions": true,
+                "moduleLoad": true
+            }
+        },
+        {
+            "name": "ESP32 nanoCLR - Wrover",
+            "type": "cppdbg",
+            "request": "launch",
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:/ESP32_TOOLS/bin/xtensa-esp32-elf-gdb.exe",
+            "stopAtEntry":true,
+            "program": "${command:nf.binaryDir/}/nanoCLR.elf",
+
+            "setupCommands": [
+                {"text": "set logging on"},
+                {"text": "target extended-remote localhost:3333"},
+                {"text": "file ${command:nf.binaryDir/}/nanoCLR.elf"},
+                {"text": "monitor reset halt"},
+                {"text": "thb app_main"},
+                {"text": "x $a1=0"}
+            ],
+
+            "launchCompleteCommand": "exec-run",
+            "debugServerPath": "C:/ESP32_TOOLS/openocd-esp32/bin/openocd.exe",
+            "debugServerArgs": "-s \"C:/ESP32_TOOLS/openocd-esp32/share/openocd/scripts/\" -f interface/ftdi/esp32_devkitj_v1.cfg -f target/esp32.cfg -c \"adapter_khz 2000\" " ,
+            "serverStarted": "Info : .*Tensilica.*0x1.",
+            "filterStderr": true,
+            "externalConsole": true,
+            "cwd": "${cwd}",
+
+            "logging": {
+                "trace": true,
+                "traceResponse": true,
+                "engineLogging": true,
+                "programOutput": true,
+                "exceptions": true,
+                "moduleLoad": true
+            }
+        },
+        {
+            "name": "F769I Discovery nanoBooter",
+            "type": "cppdbg",
+            "request": "launch",
+            "miDebuggerPath": "C:/GNU_Tools_ARM_Embedded/7-2018-q2-update/bin/arm-none-eabi-gdb.exe",
+            "targetArchitecture": "ARM",
+            "program": "${command:nf.binaryDir/}/nanoBooter.elf",
+
+            "setupCommands": [
+                {"text": "target extended-remote localhost:3333"},
+                {"text": "monitor reset_config none separate"},
+                {"text": "monitor reset halt"},                
+                {"text": "monitor flash write_image erase \"${command:nf.binaryDir/}/nanoBooter.hex\" "},
+                {"text": "file ${command:nf.binaryDir/}/nanoBooter.elf"}
+            ],
+
+            "customLaunchSetupCommands": [
+                {"text": "monitor reset_config none separate"},
+                {"text": "monitor reset halt"}
+            ],
+
+            "launchCompleteCommand": "exec-continue",
+            "debugServerPath": "C:/nanoFramework_Tools/Tools/openocd/bin/openocd.exe",
+            "debugServerArgs": "-s \"C:/nanoFramework_Tools/Tools/openocd/bin/scripts/\" -f interface/stlink-v2-1.cfg -f board/stm32f7discovery.cfg",
+            "serverStarted": "Info\\ :\\ [\\w\\d\\.]*:\\ hardware",
+            "filterStderr": true,
+            "externalConsole": true,
+            "cwd": "${cwd}"
+        },
+        {
+            "name": "F769I Discovery nanoCLR",
+            "type": "cppdbg",
+            "request": "launch",
+            "miDebuggerPath": "C:/GNU_Tools_ARM_Embedded/7-2018-q2-update/bin/arm-none-eabi-gdb.exe",
+            "targetArchitecture": "ARM",
+            "program": "${command:nf.binaryDir/}/nanoCLR.elf",
+
+            "setupCommands": [
+                {"text": "target extended-remote localhost:3333"},
+                {"text": "monitor reset_config none separate"},
+                {"text": "monitor reset halt"},
+                {"text": "monitor flash write_image erase \"${command:nf.binaryDir/}/nanoCLR.hex\" "},
+                {"text": "file ${command:nf.binaryDir/}/nanoCLR.elf"}
+            ],
+
+            "customLaunchSetupCommands": [
+                {"text": "monitor reset_config none separate"},
+                {"text": "monitor reset halt"} 
+            ],
+
+            "launchCompleteCommand": "exec-continue",
+            "debugServerPath": "C:/Esp32_Tools/openocd-esp32/bin/openocd.exe",
+            "debugServerArgs": "-s \"C:/Esp32_Tools/openocd-esp32/share/openocd/scripts\" -f interface/stlink-v2-1.cfg -f board/stm32f7discovery.cfg",
+            "serverStarted": "Info\\ :\\ [\\w\\d\\.]*:\\ hardware",
+            "filterStderr": true,
+            "externalConsole": true,
+            "cwd": "${cwd}"
+        }  
+    ]
+}
