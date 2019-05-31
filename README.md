@@ -91,6 +91,8 @@ Please give it a run and let me know what other variable substitutions would be 
 
 ## Release Notes
 
+### 1.0.2   (31-May-2019)
+Update dependency fstream to version >=1.0.12 due to vulnerability repored by GitHub
 
 ### 1.0.1 (alpha)
 
