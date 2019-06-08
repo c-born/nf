@@ -2,7 +2,7 @@
 	"name": "nf",
 	"displayName": "nf",
 	"description": "Support for nanoFramework development in Visual Studio Code",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"publisher": "cborn",
 	"engines": {
 		"vscode": "^1.33.0"
@@ -70,6 +70,7 @@
 		"vscode": "^1.1.28",
 		"tslint": "^5.12.1",
 		"fstream": ">=1.0.12",
+		"querystringify": ">=2.0.0",
 		"@types/node": "^10.12.21",
 		"@types/mocha": "^2.2.42"
 	},
