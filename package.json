@@ -2,7 +2,7 @@
 	"name": "nf",
 	"displayName": "nf",
 	"description": "Support for nanoFramework development in Visual Studio Code",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"publisher": "cborn",
 	"engines": {
 		"vscode": "^1.33.0"
@@ -19,7 +19,7 @@
 		"cmake",
 		"tools",
 		"build"
-	  ],
+	],
 	"activationEvents": [
 		"onCommand:nf.workspaceFolder/",
 		"onCommand:nf.buildDirectory",
@@ -75,6 +75,6 @@
 		"@types/mocha": "^2.2.42"
 	},
 	"extensionDependencies": [
-		"vector-of-bool.cmake-tools"
-	  ]
+		"ms-vscode.cmake-tools"
+	]
 }
